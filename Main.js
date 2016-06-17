@@ -27,7 +27,6 @@ var speedingUp;
 var savedballxx;
 var savedballyy;
 var speedAdded;
-var playerScoreNumber;
 paddleSpeed = 4;
 ballyspeed = 7.5;
 ballxspeed = 7.5;
