@@ -122,6 +122,16 @@ function init() {
         speedingUp.y = 0;
         speedingUp.x = -1000;
 
+        cpuScore = new createjs.Text(cpuScoreN, "20px Arial", "#f91010");
+        cpuScore.x = 100;
+        cpuScore.y = 50;
+        cpuScore.textBaseline = "alphabetic";
+
+        playerScore = new createjs.Text(playerScoreN, "20px Arial", "#f91010");
+        playerScore.x = 700;
+        playerScore.y = 50;
+        playerScore.textBaseline = "alphabetic";
+
         exit = queue.getResult("exit");
         exit = new createjs.Bitmap(exit);
 
@@ -202,15 +212,6 @@ function showGame(event) {
         .to({x: 1000}, 500);
 
     //Points
-    cpuScore = new createjs.Text(cpuScoreN, "20px Arial", "#f91010");
-    cpuScore.x = 100;
-    cpuScore.y = 50;
-    cpuScore.textBaseline = "alphabetic";
-
-    playerScore = new createjs.Text(playerScoreN, "20px Arial", "#f91010");
-    playerScore.x = 700;
-    playerScore.y = 50;
-    playerScore.textBaseline = "alphabetic";
 
     stage.addChild(paddleGood, paddleBad, ball, playerScore, cpuScore);
     stage.update();
@@ -251,7 +252,6 @@ function moveBall() {
         cpuScore.text = cpuScore.text + 1;
         reset()
     }
-
 
     if (ball.x >= 929) {
         playerScore.text = playerScore.text + 1;
@@ -325,7 +325,7 @@ function startGame() {
 
 function movepaddle(e) {
     // Mouse Movement
-    paddleGood.y = e.stageY - 80;
+    paddleGood.y = e.stageY - 50;
 }
 
 function moveBadpaddle() {
@@ -374,8 +374,8 @@ function reset() {
 }
 
 function stopReset() {
-    ballyspeed = savedballyy;
     ballxspeed = savedballxx;
+    ballyspeed = savedballyy;
     stage.removeEventListener("click", stopReset);
     // get the text from the playerScore object and convert it to a number using parseInt
     var playerScoreN = parseInt(playerScore.text);
