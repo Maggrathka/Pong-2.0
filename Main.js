@@ -369,6 +369,6 @@ function speedUp() {
     createjs.Tween.get(speedingUp)
         .to({x: 1000}, 1000)
         .to({x: -1000}, 500);
-    paddleSpeed += 2;
+    paddleSpeed += 1.5;
     ballxspeed += 3;
 }
