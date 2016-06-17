@@ -27,7 +27,7 @@ var speedingUp;
 var savedballxx;
 var savedballyy;
 var speedAdded;
-paddleSpeed = 4;
+paddleSpeed = 3.5;
 ballyspeed = 7.5;
 ballxspeed = 7.5;
 createjs.Ticker.setFPS(60);
