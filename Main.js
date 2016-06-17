@@ -26,6 +26,7 @@ var paddleSpeed;
 var speedingUp;
 var savedballxx;
 var savedballyy;
+var speedAdded;
 var playerScoreNumber;
 paddleSpeed = 3;
 ballyspeed = 7;
@@ -260,7 +261,7 @@ function moveBall() {
     //Bounces off paddles
     //Paddle Top
     if (ball.x <= 36) {
-        if (ball.y >= paddleGood.y && ball.y <= paddleGood.y + 72) {
+        if (ball.y >= paddleGood.y && ball.y <= paddleGood.y + 30) {
             ballxspeed = -ballxspeed;
             ballyspeed = -Math.abs(ballyspeed);
             ball.x = 50
@@ -270,9 +271,18 @@ function moveBall() {
     //Paddle bottom
 
     if (ball.x <= 36) {
-        if (ball.y >= paddleGood.y + 72 && ball.y <= paddleGood.y + 144) {
+        if (ball.y >= paddleGood.y + 114 && ball.y <= paddleGood.y + 144) {
             ballxspeed = -ballxspeed;
             ballyspeed = Math.abs(ballyspeed);
+            ball.x = 42
+        }
+    }
+    //Paddle middle
+    if (ball.x <= 36) {
+        if (ball.y >= paddleGood.y + 30 && ball.y <= paddleGood.y + 114) {
+            ballxspeed = -ballxspeed;
+            ballxspeed += 2;
+            speedAdded += 2;
             ball.x = 42
         }
     }
@@ -280,7 +290,7 @@ function moveBall() {
     //Bounces off paddles
     //Paddle Top
     if (ball.x >= 880) {
-        if (ball.y >= paddleBad.y && ball.y <= paddleBad.y + 72) {
+        if (ball.y >= paddleBad.y && ball.y <= paddleBad.y + 30) {
             ballxspeed = -ballxspeed;
             ballyspeed = -Math.abs(ballyspeed);
             ball.x = 870
@@ -290,9 +300,20 @@ function moveBall() {
     //Paddle bottom
 
     if (ball.x >= 880) {
-        if (ball.y >= paddleBad.y + 72 && ball.y <= paddleBad.y + 144) {
+        if (ball.y >= paddleBad.y + 114 && ball.y <= paddleBad.y + 144) {
             ballxspeed = -ballxspeed;
             ballyspeed = Math.abs(ballyspeed);
+            ball.x = 870
+        }
+    }
+
+    //Paddle middle
+
+    if (ball.x >= 880) {
+        if (ball.y >= paddleBad.y + 30 && ball.y <= paddleBad.y + 114) {
+            ballxspeed = -ballxspeed;
+            ballxspeed += 2;
+            speedAdded += 2;
             ball.x = 870
         }
     }
