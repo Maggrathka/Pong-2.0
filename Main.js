@@ -28,8 +28,8 @@ var savedballxx;
 var savedballyy;
 var speedAdded;
 paddleSpeed = 3.5;
-ballyspeed = 7.5;
-ballxspeed = 7.5;
+ballyspeed = 7;
+ballxspeed = 7;
 createjs.Ticker.setFPS(60);
 
 function init() {
